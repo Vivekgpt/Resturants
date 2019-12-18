@@ -42,7 +42,7 @@ class Restaurant extends React.Component {
             food: ["Chinese ,Biryani ,North Indian"],
             votes: "3116 votes",
             reviews: "887 reviews",
-            ratings: 2.1,
+            ratings: 2.3,
             Min: "Min ₹120",
             cost: "600 for two",
             deliverytime: "Up to 30 min",
@@ -143,10 +143,9 @@ class Restaurant extends React.Component {
         ], ratings: 0
     }
   }
-  sortRating = (sortRate) => {
+  sortRating = () => {
     return this.setState({
-      // ratings: ratings.sort((a,b) => a.ratings - b.ratings)
-      sortRate : sortRate
+      RestaurantDetails : this.state.RestaurantDetails.sort((a,b) => a.ratings - b.ratings)
     });
   }
 
@@ -161,14 +160,14 @@ class Restaurant extends React.Component {
       <div>
         <div className="button">
           <h3>Search Filter By:</h3>
-          <button className="btn-outline-success" onClick={() => this.sortRating}>Sort</button>
+          <button className="btn-outline-success" onClick={() => this.sortRating()}>Sort</button>
           <button className="btn-outline-success" onClick={() => this.showRating(1)}>1 Star &#9733;</button>
           <button className="btn-outline-success" onClick={() => this.showRating(2)}>2 Star &#9733;</button>
           <button className="btn-outline-success" onClick={() => this.showRating(3)}>3 Star &#9733;</button>
           <button className="btn-outline-success" onClick={() => this.showRating(4)}>4 Star &#9733;</button>
         </div>
         <div className="flex container">
-          {this.state.RestaurantDetails.sort((a,b) => a.ratings - b.ratings).filter(items => items.ratings > this.state.ratings).map((item) => {
+          {this.state.RestaurantDetails.filter(items => items.ratings > this.state.ratings).map((item) => {
             return (
               <div className="card mb-4" style={{ "maxWidth": "600px" }} key={item.id}>
                 <div className="row">
