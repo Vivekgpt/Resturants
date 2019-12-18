@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.card-img{
+  height: 245px;
+}
+
+.ratings{
+  background:green;
+  height: 30px;
+  width: 50px;
+  color: white;
+  border-Radius: 4px;
+  float: right;
+  font-Size: 5mm;
+  line-Height: 30px;
+  text-Align: center;
+}
+
+button{
+  background: rgb(203, 212, 203);
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.button{
+  margin: 10px 50px 0px 30px;
+  text-align: center;
+}
+
+.flex{
+  display: grid;
+  grid-template-columns: 600px 600px;
+  grid-column-gap: 30px;
+  margin: 25px;
+}
